@@ -36,4 +36,10 @@ jobs:
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         EMAIL_TO: ${{ secrets.EMAIL_TO }}
       run: |
-        python test_briefing.py
+        echo "Starting Daily Briefing Bot..."
+        echo "Environment variables loaded:"
+        echo "NEWS_API_KEY: ${NEWS_API_KEY:0:10}..."
+        echo "STOCK_API_KEY: ${STOCK_API_KEY:0:10}..."
+        echo "EMAIL_FROM: $EMAIL_FROM"
+        echo "EMAIL_TO: $EMAIL_TO"
+        python send_briefing.py
